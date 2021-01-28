@@ -39,8 +39,6 @@ const MyRewardContCount = (props: any) => {
         coupon: ""
     })
 
-    //const [boolean, setBoolean] = useState(false);
-
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function openModal() {
         setIsOpen(true);
@@ -58,7 +56,6 @@ const MyRewardContCount = (props: any) => {
 
         const text = "자동지급 사항이 아니기 때문에 \n 발급되는 시간이 걸릴 수 있으니 양해바랍니다.";
         refer.children[2].innerHTML = text;
-        //refer.children[2].innerHTML = imgPath.coupon !== undefined ? text : "";
         imgPath.coupon !== undefined ? SetcouponImg({ coupon: "" }) : SetbadgeImg({ badge: "" })
     }
 
@@ -82,8 +79,8 @@ const MyRewardContCount = (props: any) => {
     const RewardRequire = async (e: React.MouseEvent<HTMLButtonElement>) => {
 
         const element = e.currentTarget
-        // const elementParent = element.parentElement as HTMLElement;
         const buttonId = Number(element.getAttribute("data-id"));
+        
         if (count.quests[buttonId - 1].is_achieved) {
 
             const requestPostSend = await fetch(`${URL}/quest/claim/${buttonId}`, {
