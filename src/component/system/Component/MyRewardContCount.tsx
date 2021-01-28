@@ -42,8 +42,6 @@ const MyRewardContCount = (props: any) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function openModal() {
         setIsOpen(true);
-        // console.log(badge);
-
     }
 
 
