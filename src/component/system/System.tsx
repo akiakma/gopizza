@@ -122,8 +122,6 @@ const System = ({ history }: RouteComponentProps) => {
             const infoJson = await info.json();
             const scoreJson = await score.json();
 
-            console.log("내용", infoJson.average_time);
-
             setUserInfo({
                 image: infoJson.user_info.image,
                 name: infoJson.user_info.name,
@@ -185,8 +183,6 @@ const System = ({ history }: RouteComponentProps) => {
         if (info.status === 200 && myScore.status === 200) {
             const infoJson = await info.json();
             const myScoreJson = await myScore.json();
-
-            console.log(infoJson, myScoreJson);
 
             setquestList({
                 questList: infoJson
